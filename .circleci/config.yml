@@ -6,22 +6,17 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
   aws-s3: circleci/aws-s3@2.0.0
   s3: ngs/s3-deploy@0.0.1
-jobs:
-  build:
-    filters:
-      branches:
-        only:     # Only deploy for production, staging, and master branchs
-          - production
-          - staging
-          - master
-          - main
+workflows: # Define a Workflow running the build job, then the deploy job
+  version: 2
+  jobs: # Define the build and deploy jobs
     steps:
       - aws-s3/sync:
-        arguments: |
-          --acl public-read \
-          --cache-control "max-age=86400"
-        aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
-        aws-region: AWS_REGION_BLUE
-        aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
-        from: .
-        to: 's3://fecodepub'
+          arguments: | # Optional arguments
+            --acl public-read \
+            --cache-control "max-age=86400"
+          aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
+          aws-region: AWS_REGION_BLUE
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
+          from: .
+          to: 's3://fecodepub'
+          overwrite: true # default is false
