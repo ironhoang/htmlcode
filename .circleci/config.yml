@@ -16,13 +16,12 @@ jobs:
           - master
           - main
     steps:
-      - checkout
-        - aws-s3/sync:
-          arguments: |
-            --acl public-read \
-            --cache-control "max-age=86400"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
-          aws-region: AWS_REGION_BLUE
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
-          from: bucket
-          to: 's3://fecodepub/'
+      - aws-s3/sync:
+        arguments: |
+          --acl public-read \
+          --cache-control "max-age=86400"
+        aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
+        aws-region: AWS_REGION_BLUE
+        aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
+        from: bucket
+        to: 's3://fecodepub/'
