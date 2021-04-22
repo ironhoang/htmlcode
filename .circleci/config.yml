@@ -11,12 +11,12 @@ workflows: # Define a Workflow running the build job, then the deploy job
   jobs: # Define the build and deploy jobs
     steps:
       - aws-s3/sync:
-          arguments: | # Optional arguments
-            --acl public-read \
-            --cache-control "max-age=86400"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
-          aws-region: AWS_REGION_BLUE
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
-          from: .
-          to: 's3://fecodepub'
-          overwrite: true # default is false
+        arguments: | # Optional arguments
+          --acl public-read \
+          --cache-control "max-age=86400"
+        aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
+        aws-region: AWS_REGION_BLUE
+        aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
+        from: .
+        to: 's3://fecodepub'
+        overwrite: true # default is false
