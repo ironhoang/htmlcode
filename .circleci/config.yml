@@ -24,7 +24,7 @@ jobs: # Define the build and deploy jobs
     steps:
     - checkout
     - run:
-      command: echo "Successfully uploaded to iron"
+      command: echo "Successfully uploaded to iron   "
           #aws s3 sync --delete . s3://fecodepub
           #echo "Successfully uploaded to iron"
 #      - aws-s3/sync:
