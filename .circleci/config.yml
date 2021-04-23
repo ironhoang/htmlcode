@@ -19,6 +19,8 @@ workflows: # Define a Workflow running the build job, then the deploy job
               - circleci-project-setup
 jobs: # Define the build and deploy jobs
   build:
+    machine:
+      image: ubuntu-1604:201903-01
     steps:
     - checkout
     - run:
