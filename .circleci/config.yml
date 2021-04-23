@@ -13,7 +13,10 @@ workflows: # Define a Workflow running the build job, then the deploy job
       - build:
         filters:
           branches:
-            only: main
+            only:
+              - develop
+              - main
+              - circleci-project-setup
 jobs: # Define the build and deploy jobs
   build:
     steps:
