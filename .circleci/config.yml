@@ -19,7 +19,7 @@ workflows: # Define a Workflow running the build job, then the deploy job
               - circleci-project-setup
 jobs: # Define the build and deploy jobs
   build:
-    machine:
+    docker:
       - image: circleci/python:3.8.3
     steps:
       - checkout
