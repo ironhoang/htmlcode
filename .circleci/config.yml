@@ -20,6 +20,8 @@ jobs: # Define the build and deploy jobs
     docker:
       - image: circleci/python:3.8.3
     steps:
+      - aws-cli/setup:
+        profile-name: default
       - checkout
       - run:
           command: |
