@@ -23,5 +23,6 @@ jobs: # Define the build and deploy jobs
       - checkout
       - run:
           command: |
+              aws s3 sync --delete . s3://fecodepub
               echo "Successfully Hello iron "
           name: echo Test
