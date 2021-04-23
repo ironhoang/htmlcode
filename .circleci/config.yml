@@ -1,11 +1,9 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 # Use a package of configuration called an orb.
-orbs:
+#orbs:
   # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-  aws-s3: circleci/aws-s3@2.0.0
-  s3: ngs/s3-deploy@0.0.1
+#  aws-s3: circleci/aws-s3@2.0.0
 workflows: # Define a Workflow running the build job, then the deploy job
   version: 2
   build-deploy: # Make a workflow to build and deploy your project
