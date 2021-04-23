@@ -22,9 +22,9 @@ jobs: # Define the build and deploy jobs
     machine:
       image: ubuntu-1604:201903-01
     steps:
-    - checkout
-    - run:
-      command: echo "Successfully uploaded to iron   "
+      - checkout
+      - run:
+        command: echo "Successfully uploaded to iron   "
           #aws s3 sync --delete . s3://fecodepub
           #echo "Successfully uploaded to iron"
 #      - aws-s3/sync:
