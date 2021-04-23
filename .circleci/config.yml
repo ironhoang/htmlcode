@@ -20,10 +20,9 @@ workflows: # Define a Workflow running the build job, then the deploy job
 jobs: # Define the build and deploy jobs
   build:
     steps:
-      - checkout
-      - run:
-        name: Upload to AWS S3
-        command: echo "Successfully uploaded to iron"
+    - checkout
+    - run:
+      command: echo "Successfully uploaded to iron"
           #aws s3 sync --delete . s3://fecodepub
           #echo "Successfully uploaded to iron"
 #      - aws-s3/sync:
