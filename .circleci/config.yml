@@ -22,6 +22,6 @@ jobs: # Define the build and deploy jobs
     steps:
       - checkout
       - run:
-        name: echo Test
-        command: |
-            echo "Successfully Hello iron "
+          command: |
+              echo "Successfully Hello iron "
+          name: echo Test
