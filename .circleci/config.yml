@@ -24,4 +24,4 @@ jobs: # Define the build and deploy jobs
       - run:
         name: echo Test
         command: |
-          echo "Successfully uploaded to iron   "
+          echo "Successfully Hello iron "
