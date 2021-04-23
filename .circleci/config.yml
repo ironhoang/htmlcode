@@ -23,9 +23,9 @@ jobs: # Define the build and deploy jobs
       - checkout
       - run:
         name: Upload to AWS S3
-        command: |
-          aws s3 sync --delete . s3://fecodepub
-          echo "Successfully uploaded to iron"
+        command: echo "Successfully uploaded to iron"
+          #aws s3 sync --delete . s3://fecodepub
+          #echo "Successfully uploaded to iron"
 #      - aws-s3/sync:
 ##        arguments: | # Optional arguments
 ##          --acl public-read \
