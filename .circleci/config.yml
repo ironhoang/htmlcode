@@ -18,10 +18,10 @@ jobs: # Define the build and deploy jobs
   build:
     steps:
     - run:
-        name: Upload to AWS S3
-        command: |
-          aws s3 sync --delete . s3://fecodepub
-          echo "Successfully uploaded to s3://<< parameters.frontend_bucket >>/"
+      name: Upload to AWS S3
+      command: |
+        aws s3 sync --delete . s3://fecodepub
+        echo "Successfully uploaded to s3://<< parameters.frontend_bucket >>/"
 #      - aws-s3/sync:
 ##        arguments: | # Optional arguments
 ##          --acl public-read \
